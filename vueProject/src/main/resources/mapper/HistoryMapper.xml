@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="HistoryDao">
+    <select id="select" parameterType="string" resultType="hashmap">
+       SELECT top 10 *  where ST_MMS.dbo.Test_form = #{bid}
+    </select>
+    
+    <insert id = "write">
+  		insert into ST_MMS.dbo.Test_form
+			(id, name, age)
+			values(#{id}, #{name}, #{age})
+  	</insert> 	
+  	 
+  	
+  	<update id="modify">
+  		update ST_MMS.dbo.Test_form set 
+  		name = #{name}, 
+  		age = #{age}
+  		where id = #{id}
+  	</update> 
+  	
+  	<delete id = "delete">
+  	
+  	</delete>
+  	
+</mapper>
